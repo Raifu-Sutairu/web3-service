@@ -1,0 +1,66 @@
+{
+  "name": "web3_service",
+  "version": "1.0.0",
+  "description": "Will add docs before submission",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy:local": "hardhat run scripts/deploy/deploy-all.ts --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy/deploy-all.ts --network sepolia",
+    "deploy:mainnet": "hardhat run scripts/deploy/deploy-all.ts --network mainnet",
+    "deploy:mumbai": "hardhat run scripts/deploy/deploy-all.ts --network mumbai",
+    "verify:sepolia": "hardhat run scripts/verify-contracts.ts --network sepolia",
+    "verify:mainnet": "hardhat run scripts/verify-contracts.ts --network mainnet",
+    "verify:mumbai": "hardhat run scripts/verify-contracts.ts --network mumbai",
+    "status:local": "hardhat run scripts/check-deployment.ts --network localhost",
+    "status:sepolia": "hardhat run scripts/check-deployment.ts --network sepolia",
+    "status:mainnet": "hardhat run scripts/check-deployment.ts --network mainnet",
+    "validate:config": "hardhat run scripts/validate-config.ts",
+    "test:deployment": "hardhat test test/deployment/deployment.test.ts",
+    "test:integration": "hardhat test test/integration/*.test.ts",
+    "test:integration:e2e": "hardhat test test/integration/end-to-end.test.ts",
+    "test:integration:cross": "hardhat test test/integration/cross-contract.test.ts",
+    "test:integration:performance": "hardhat test test/integration/performance.test.ts",
+    "test:integration:services": "hardhat test test/integration/service-workflow.test.ts",
+    "node": "hardhat node",
+    "test": "hardhat test",
+    "test:all": "hardhat test && npm run test:integration",
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raifu-Sutairu/web3-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Raifu-Sutairu/web3-service/issues"
+  },
+  "homepage": "https://github.com/Raifu-Sutairu/web3-service#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.2.1",
+    "hardhat": "^2.26.3",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
+    "ethers": "^6.15.0",
+    "form-data": "^4.0.0",
+    "ipfs-http-client": "^60.0.1",
+    "web3": "^4.16.0"
+  }
+}
